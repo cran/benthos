@@ -500,20 +500,10 @@ function(filename) {
 	}
 
 	# read file
-    opt <- options(warn = 2)
 	d <- try(
-        filename %>%
-            read_csv(
-                col_types = cols_only(
-                    group = col_character(),
-                    provided = col_character(),
-                    accepted = col_character(),
-                    level = col_character()
-                )
-            ), 
+	    suppressMessages(read_csv(filename)),
         silent = TRUE
     )
-    options(opt)
 	if (inherits(d, "try-error")) {
 		stop(
 			sprintf(fmt = "Errors occurred while reading %s", sQuote(filename)),
