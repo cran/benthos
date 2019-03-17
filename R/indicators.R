@@ -319,7 +319,7 @@ function(.data = NULL, taxon, count, adjusted = FALSE) {
 #' @param taxon taxa names (\code{character})
 #' @param count counts (\code{numeric})
 #' @param base the base with respect to which logarithms are computed. 
-#'      Defaults to 2.
+#'      Defaults to 2 (unit: bits).
 #'
 #' @return Shannon's entropy
 #'  
@@ -351,7 +351,12 @@ function(.data = NULL, taxon, count, base = 2) {
     }
     n <- abundance_(.data, taxon = taxon, count = count)
     N <- total_abundance_(.data, count = count)
+    epsilon <- .Machine$double.eps
+    if (N < epsilon) {
+        return(NaN)
+    }
     p <- n / N
+    p <- p[p > epsilon] # remove limiting case as lim p->0 (p log p = 0)
     -sum(p * log(p, base = base))
 }
 

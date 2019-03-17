@@ -4,6 +4,8 @@ knitr::opts_chunk$set(
   comment = NA_character_
 )
 options(dplyr.width = 100, width = 100)
+# see e-mail Kurt Hornik 2019-03-05T12:59
+suppressWarnings(RNGversion("3.5.0"))
 set.seed(314)
 
 ## -------------------------------------------------------------------------------------------------
@@ -138,14 +140,14 @@ pool_runs <- replicate(
 
 ## -------------------------------------------------------------------------------------------------
 names(pool_runs) <- paste0("POOLRUN", 1:n_pool_runs)
-pool_runs <- pool_runs %>% as_data_frame
+pool_runs <- pool_runs %>% as_tibble
 pool_runs
 
 ## -------------------------------------------------------------------------------------------------
 oosterschelde_orig <- oosterschelde
 oosterschelde <- oosterschelde %>%
     bind_cols(pool_runs) %>% 
-    as_data_frame 
+    as_tibble 
 oosterschelde
 
 ## -------------------------------------------------------------------------------------------------
@@ -217,13 +219,13 @@ d %>% rygg(taxon = TAXON, count = COUNT)
 
 ## ---- echo=FALSE, message=FALSE-------------------------------------------------------------------
 x <- bind_rows(
-    data_frame(S =  1, N = c(1:9, 1:10*10)),
-    data_frame(S =  2, N = c(2:9, 1:10*10)),
-    data_frame(S =  3, N = c(3:9, 1:10*10)),
-    data_frame(S =  4, N = c(4:9, 1:10*10)),
-    data_frame(S =  5, N = c(5:9, 1:10*10)),
-    data_frame(S = 10, N = 1:10*10),
-    data_frame(S = 25, N = c(25, 3:10*10))) %>% 
+    tibble(S =  1, N = c(1:9, 1:10*10)),
+    tibble(S =  2, N = c(2:9, 1:10*10)),
+    tibble(S =  3, N = c(3:9, 1:10*10)),
+    tibble(S =  4, N = c(4:9, 1:10*10)),
+    tibble(S =  5, N = c(5:9, 1:10*10)),
+    tibble(S = 10, N = 1:10*10),
+    tibble(S = 25, N = c(25, 3:10*10))) %>% 
     mutate(
         margalef = (S-1) / log(N),
         SN_rygg = log(S) / log(log(N)),
@@ -367,9 +369,9 @@ pool_runs <- replicate(
 names(pool_runs) <- paste0("POOLRUN", 1:n_pool_runs)
 
 d <- pool_runs %>% 
-    as_data_frame %>%
+    as_tibble %>%
     bind_cols(oosterschelde) %>% 
-    as_data_frame %>%
+    as_tibble %>%
     gather(key = "POOLRUN", value = "POOLID", starts_with("POOLRUN")) %>%
     mutate(POOLRUN = parse_number(POOLRUN) %>% as.integer) %>%
     filter(!is.na(POOLID)) %>%

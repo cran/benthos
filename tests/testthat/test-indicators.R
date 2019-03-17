@@ -172,6 +172,15 @@ test_that("'Shannon index' has been correctly implemented", {
             11/21 * log2(11/21)
         )
     )
+    expect_equal(
+        shannon(taxon = c("a", "b", "c", "d"), count = c( 3,   7,  11, 0)),
+        -sum(
+            3/21 * log2( 3/21) + 
+                7/21 * log2( 7/21) + 
+                11/21 * log2(11/21)
+        )
+    )
+    expect_true(is.nan(shannon(taxon = "x", count = 0)))
     expect_error(
         shannon(taxon = c("a", "b", "c"), count = c(3, 7, 1, 9)),
        "'taxon' and 'count' should have the same length"
@@ -425,6 +434,8 @@ test_that("'hpie' has been correctly implemented", {
 
 test_that("'hpie' has been correctly implemented (test by simulation)", {
     skip_on_cran()
+    # see e-mail Kurt Hornik 2019-03-05T12:59
+    suppressWarnings(RNGversion("3.5.0"))
     set.seed(314)
     N <- 1000000L
     d <- rep.int(x = 1:2, times = c(100, 100))
