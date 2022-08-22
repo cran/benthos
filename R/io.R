@@ -52,8 +52,8 @@ function(filename) {
 validate_beqi2 <-
 function(.data) {
 
-    # convert to data_frame
-    .data <- .data %>% as_data_frame
+    # convert to tibble
+    .data <- .data %>% as_tibble
 
 	# CHAR is not required anymore: patch for backward-compatibility
     if (!("CHAR" %in% names(.data))) {
@@ -131,12 +131,12 @@ function(.data) {
 	# remove redundant spaces (alternative: 'mutate_each' function did crash)
     .data[required_vars] <- .data[required_vars] %>% 
         lapply(FUN = strip_spaces) %>% 
-        as_data_frame
+        as_tibble
 
     # harmonize columns (same case)
     .data[required_vars] <- .data[required_vars] %>% 
         lapply("harmonize") %>% 
-        as_data_frame
+        as_tibble
     
 	# coerce date to class 'Date'
 	res <- try(as.Date(.data$DATE, format = "%Y-%m-%d"), silent = TRUE)
@@ -258,7 +258,7 @@ function(.data) {
 #'
 #' @param filename name of TWN file (\code{character})
 #'
-#' @return a \code{data_frame} with four columns:
+#' @return a \code{tibble} with four columns:
 #'  \itemize{
 #' 		\item{GROUP} {TWN/WoRMS taxon group}
 #'  	\item{LEVEL} {TWN/WoRMS taxon level}
@@ -266,8 +266,7 @@ function(.data) {
 #'      \item{TO} {taxon name to convert to}
 #' 	}
 #'
-#' @references \url{sofus.ecosys.nl/taxabase.htm}
-#' @references \url{www.aquo.nl/faq/faq-twn}
+#' @references \url{https://taxainfo.nl/}
 #'  
 #' @importFrom utils read.csv
 #' 
@@ -320,9 +319,9 @@ function() {
 validate_twn <-
 function(.data) {
     
-    # convert to data_frame
+    # convert to tibble
     .data <- .data %>% 
-        as_data_frame
+        as_tibble
 
 	# check column names
 	required_vars <- c("status", "taxonname", "taxongroup", "prefername", 
@@ -532,9 +531,9 @@ function() {
 validate_taxa <-
 function(.data) {
     
-    # convert to data_frame
+    # convert to tibble
     .data <- .data %>% 
-        as_data_frame
+        as_tibble
 
 	# check column names
 	required_vars <- c("group", "provided", "accepted", "level")
@@ -749,8 +748,8 @@ function(.data) {
 .validate_groups <-
 function(.data, permissable_groups) {
 
-    # convert to data_frame
-    .data <- .data %>% as_data_frame
+    # convert to tibble
+    .data <- .data %>% as_tibble
 
     # check column names (case insensitive)
     names(.data) <- toupper(names(.data))
@@ -975,8 +974,8 @@ function(filename, indicators = c("S", "H", "AMBI")) {
 validate_ref <- 
 function(.data, indicators = c("S", "H", "AMBI")) {
     
-    # convert to data_frame
-    .data <- .data %>% as_data_frame
+    # convert to tibble
+    .data <- .data %>% as_tibble
     
     # check indicators
     valid_indicators <- c("N", "LNN", "S", "D", "SN", "SNA", "H", "L", 

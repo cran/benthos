@@ -35,9 +35,9 @@ The function performs the following tasks:
 }
 \section{Functions}{
 \itemize{
-\item \code{validate_ambi}: validator for AMBI-format
-}}
+\item \code{validate_ambi()}: validator for AMBI-format
 
+}}
 \references{
 Borja, A., J. Franco and V. Perez, 2000. A Marine Biotic Index 
  to Establish the Ecological Quality of Soft-Bottom Benthos Within 

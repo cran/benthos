@@ -10,7 +10,7 @@ simpson(.data = NULL, taxon, count)
 simpson_(.data = NULL, taxon, count)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{name of column in \code{.data} containing taxa}
@@ -36,10 +36,10 @@ has been implemented in function \code{simpson} (and \code{simpson_}).
 }
 \section{Functions}{
 \itemize{
-\item \code{simpson_}: version suitable for calling from a function
+\item \code{simpson_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \examples{
      simpson(
          taxon = c("Euspira pulchella", "Nephtys cirrosa"),  

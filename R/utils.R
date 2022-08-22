@@ -62,9 +62,9 @@ function(sample_id = 1:length(area), area, target_area, max_try = 100L) {
     # make sure that target_area is an ordered vector of length 2
     target_area <- target_area %>% range
 
-    # construct data_frame
+    # construct tibble
     stopifnot(length(area) == length(sample_id))
-    d_full <- data_frame(sample_id, area)
+    d_full <- tibble(sample_id, area)
     if (nrow(d_full) == 0L) {
         stop("no samples found", call. = FALSE)
     }
@@ -392,14 +392,13 @@ genus_to_species <- function(is_genus, count) {
 #' is used, extended with species of the Southern North Sea. 
 #' See references below for download locations.
 #'  
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'     \code{data.table}, database etc.
 #' @param taxon \code{\link{character}} vector, containing taxon names
 #' @param worms an optional table usually created with \code{\link{read_twn}}.
 #'  
-#' @references \url{http://www.marinespecies.org/}
-#' @references \url{http://sofus.ecosys.nl/taxabase.htm}
-#' @references \url{http://www.aquo.nl/faq/faq-twn/}
+#' @references \url{https://www.marinespecies.org/}
+#' @references \url{https://taxainfo.nl/}
 #'
 #' @return character vector with WoRMS compliant species names
 #'
@@ -442,9 +441,8 @@ function(.data, taxon) {
 #' @param taxon \code{\link{character}} vector, containing taxon names
 #' @param taxa an optional table usually created with \code{\link{read_taxa}}.
 #'  
-#' @references \url{http://www.marinespecies.org/}
-#' @references \url{http://sofus.ecosys.nl/taxabase.htm}
-#' @references \url{http://www.aquo.nl/faq/faq-twn/}
+#' @references \url{https://www.marinespecies.org/}
+#' @references \url{https://taxainfo.nl/}
 #'
 #' @return character vector with WoRMS/TWN compliant species names
 #'

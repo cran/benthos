@@ -1,7 +1,7 @@
 ---
 title: "Introduction to the benthos-package"
 author: "Dennis Walvoort"
-date: "2017-11-19"
+date: "2022-08-22"
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -102,7 +102,7 @@ oosterschelde <- oosterschelde %>%
 
 ### Standardization of taxon names
 
-Taxon names need to be standardized to comply with the names in the WoRMS-database. The `as_accepted`-function does this conversion by using the TWN-list (http://sofus.ecosys.nl/taxabase.htm). This list is based on the WoRMS database (World Register of Marine Species, http://www.marinespecies.org).
+Taxon names need to be standardized to comply with the names in the WoRMS-database. The `as_accepted`-function does this conversion by using the TWN-list (https://taxainfo.nl/). This list is based on the WoRMS database (World Register of Marine Species, https://www.marinespecies.org/).
 
 We can use the `is_accepted`-function to check if a taxon complies with WoRMS:
 
@@ -209,7 +209,7 @@ oosterschelde <- oosterschelde %>%
 <img src="./figures/Corophium_arenarium.jpg" alt="Corophium arenarium" style="width: 255px;"/>
 <img src="./figures/Corophium_volutator.jpg" alt="Corophium volutator" style="width: 255px;"/>
 
-_Corophium arenarium_ (left) and  _Corophium volutator_ (right) (source: http://nature22.com)
+_Corophium arenarium_ (left) and  _Corophium volutator_ (right) (source: https://nature22.com/)
 
 
 To illustrate the algorithm, consider all records with generic name _Corophium_ in sample 130: 

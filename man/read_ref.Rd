@@ -39,9 +39,9 @@ BEQI2-package vignette.
 }
 \section{Functions}{
 \itemize{
-\item \code{validate_ref}: validator for REF-format
-}}
+\item \code{validate_ref()}: validator for REF-format
 
+}}
 \references{
 Van Loon, W, 2013. Loon2013-BEQI2-Specs-Ecotopes-27nov.doc
 }

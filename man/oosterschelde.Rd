@@ -4,7 +4,9 @@
 \name{oosterschelde}
 \alias{oosterschelde}
 \title{Oosterschelde Marine Benthos Data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 4269 rows and 8 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 4269 rows and 8 columns.
+}
 \source{
 Rijkswaterstaat Water, Transport and Living Environment,
      Department of Information Management, Lelystad, 
@@ -18,14 +20,14 @@ Oosterschelde data set. The Oosterschelde is located in the southwest of
 the Netherlands.
 }
 \details{
-The oosterschelde data contains the following columns:
+The Oosterschelde data contains the following columns:
 \itemize{
   \item ID sample identifier
   \item HABITAT specification of the habitat
   \item AREA sampled area
   \item DATE sampling date (YYYY-MM-DD, ISO 8601)
   \item TAXON standardized taxon code (see WoRMS-website 
-     \url{http://www.marinespecies.org/})
+     \url{https://www.marinespecies.org/})
   \item COUNT number of individuals of 'TAXON'
 }
 }

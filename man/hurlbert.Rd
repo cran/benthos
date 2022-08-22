@@ -10,7 +10,7 @@ hurlbert(.data = NULL, taxon, count, n = 100L)
 hurlbert_(.data = NULL, taxon, count, n = 100L)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{name of column in \code{.data} containing taxa}
@@ -27,10 +27,10 @@ The expected number of species in a sample of \code{n} individuals:
 }
 \section{Functions}{
 \itemize{
-\item \code{hurlbert_}: version suitable for calling from a function
+\item \code{hurlbert_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \examples{
      hurlbert(
          taxon = c("Euspira pulchella", "Nephtys cirrosa"), 

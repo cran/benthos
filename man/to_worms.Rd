@@ -23,7 +23,7 @@ is_accepted_(.data, taxon)
 
 \item{worms}{an optional table usually created with \code{\link{read_twn}}.}
 
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 }
 \value{
@@ -44,21 +44,19 @@ See references below for download locations.
 }
 \section{Functions}{
 \itemize{
-\item \code{is_worms}: check if a taxon complies with WoRMS
+\item \code{is_worms()}: check if a taxon complies with WoRMS
 
-\item \code{is_worms_}: as \code{is_worms} but suitable for calling from a 
+\item \code{is_worms_()}: as \code{is_worms} but suitable for calling from a 
 function (see package \pkg{lazyeval}).
 
-\item \code{is_accepted}: check if a taxon complies with WoRMS/TWN
+\item \code{is_accepted()}: check if a taxon complies with WoRMS/TWN
 
-\item \code{is_accepted_}: as \code{is_accepted} but suitable for calling from a 
+\item \code{is_accepted_()}: as \code{is_accepted} but suitable for calling from a 
 function (see package \pkg{lazyeval}).
+
 }}
-
 \references{
-\url{http://www.marinespecies.org/}
+\url{https://www.marinespecies.org/}
 
-\url{http://sofus.ecosys.nl/taxabase.htm}
-
-\url{http://www.aquo.nl/faq/faq-twn/}
+\url{https://taxainfo.nl/}
 }

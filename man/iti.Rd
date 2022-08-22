@@ -16,7 +16,7 @@ has_iti(.data = NULL, taxon, group = NULL)
 has_iti_(.data = NULL, taxon, group = NULL)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{species names}
@@ -45,16 +45,16 @@ The Infaunal Trophic Index (ITI) is given by
 }
 \section{Functions}{
 \itemize{
-\item \code{iti_}: version suitable for calling from a function
+\item \code{iti_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
 
-\item \code{has_iti}: tests if an ITI sensitivity group is available for \code{taxon}
+\item \code{has_iti()}: tests if an ITI sensitivity group is available for \code{taxon}
 (returns \code{TRUE} (available) or \code{FALSE} (unavailable))
 
-\item \code{has_iti_}: version suitable for calling from a function
+\item \code{has_iti_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \examples{
      iti(taxon = c("Euspira pulchella", "Nephtys cirrosa"), count = c(4, 6))
      

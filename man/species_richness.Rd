@@ -10,7 +10,7 @@ species_richness(.data = NULL, taxon, count = NULL)
 species_richness_(.data = NULL, taxon, count = NULL)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{taxa names (\code{character})}
@@ -27,10 +27,10 @@ Species richness (\eqn{S}{S}) is defined as the number of taxa
 }
 \section{Functions}{
 \itemize{
-\item \code{species_richness_}: version suitable for calling from a function
+\item \code{species_richness_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \examples{
  species_richness(
      taxon = c("Euspira pulchella", "Nephtys cirrosa"), 

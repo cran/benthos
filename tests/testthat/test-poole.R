@@ -89,9 +89,8 @@ test_that("pooling processes all samples if possible.", {
         sample_id <- 1:n_samples
     
         for (i in 1:10) {
-            expect_that(
-                any(is.na(pool(sample_id = sample_id, area = area, target_area = target_area))),
-                is_false()
+            expect_false(
+                any(is.na(pool(sample_id = sample_id, area = area, target_area = target_area)))
             )
         }
 })
@@ -105,10 +104,9 @@ test_that("areas of pools are in target interval.", {
             sample_id <- 1:n_samples
             area <- runif(n = n_samples, min = 0.01, max = 0.04)
             index <- pool(sample_id = sample_id, area = area, target_area = target_area)
-            expect_that(
+            expect_true(
                 all(tapply(X = area, INDEX = index, FUN = sum) %>% 
-                        between(target_area[1], target_area[2])),
-                is_true()
+                        between(target_area[1], target_area[2]))
             )
         }
 })

@@ -22,9 +22,7 @@ is used, extended with species of the Southern North Sea.
 See references below for download locations.
 }
 \references{
-\url{http://www.marinespecies.org/}
+\url{https://www.marinespecies.org/}
 
-\url{http://sofus.ecosys.nl/taxabase.htm}
-
-\url{http://www.aquo.nl/faq/faq-twn/}
+\url{https://taxainfo.nl/}
 }

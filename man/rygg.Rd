@@ -10,7 +10,7 @@ rygg(.data = NULL, taxon, count, adjusted = FALSE)
 rygg_(.data = NULL, taxon, count, adjusted = FALSE)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{taxa names (\code{character})}
@@ -32,10 +32,10 @@ for smaller \code{S=2, N=2, N=3} and \code{S=3, N=3} is
 }
 \section{Functions}{
 \itemize{
-\item \code{rygg_}: version suitable for calling from a function
+\item \code{rygg_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \note{
 Rygg's index is not defined for \eqn{N=exp(1)}. For 
      \eqn{N \leq exp(1)}{N <= exp(1)}, \code{rygg} returns 

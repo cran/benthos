@@ -36,13 +36,13 @@ Binomial Names
 }
 \section{Functions}{
 \itemize{
-\item \code{generic_name}: extracts the genus to which the species belongs
+\item \code{generic_name()}: extracts the genus to which the species belongs
 
-\item \code{specific_name}: extracts the species within the genus
+\item \code{specific_name()}: extracts the species within the genus
 
-\item \code{strip_sp}: strips postfix sp. or spp. from a binomen
+\item \code{strip_sp()}: strips postfix sp. or spp. from a binomen
+
 }}
-
 \examples{
  is_binomen("Venerupis corrugata") # TRUE
  generic_name("Venerupis corrugata") # Venerupis

@@ -32,8 +32,8 @@ Taxa files have the following format:
 }
 \section{Functions}{
 \itemize{
-\item \code{get_taxa}: get default taxa list (TWN list extended with species Southern North Sea)
+\item \code{get_taxa()}: get default taxa list (TWN list extended with species Southern North Sea)
 
-\item \code{validate_taxa}: validator for taxa-format
+\item \code{validate_taxa()}: validator for taxa-format
+
 }}
-

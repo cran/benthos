@@ -10,7 +10,7 @@ abundance(.data = NULL, taxon = NULL, count)
 abundance_(.data = NULL, taxon = NULL, count)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{name of column in \code{.data} containing taxa}
@@ -25,10 +25,10 @@ The number of indiviuals in each taxon.
 }
 \section{Functions}{
 \itemize{
-\item \code{abundance_}: version suitable for calling from a function
+\item \code{abundance_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \note{
 due to pooling, the abundance is not necessarily an integer
 }

@@ -2,7 +2,14 @@
 
 \title{News for Package \pkg{'benthos'}}
 
-\section{Changes in version 1.2-01 (2016-02-22)}{
+\section{Changes in version 1.3-8 (2022-08-22)}{
+  \itemize{
+    \item corrected RD-file (Hornik, 2022-08-19)
+    \item corrected hyperlinks (Ligges, 2022-08-22)
+  }
+}
+
+\section{Changes in version 1.2-1 (2016-02-22)}{
   \itemize{
     \item consistency checks added to read_twn/validate_twn
     \item check added to read_beqi2 for negative VALUE field 

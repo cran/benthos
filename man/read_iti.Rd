@@ -44,9 +44,9 @@ the following meaning:
 }
 \section{Functions}{
 \itemize{
-\item \code{validate_iti}: validator for ITI-format
-}}
+\item \code{validate_iti()}: validator for ITI-format
 
+}}
 \references{
 Gittenberger A. and  W. van Loon, 2013. 
      Sensitivities of marine macrozoobenthos to environmental pressures 

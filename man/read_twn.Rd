@@ -18,7 +18,7 @@ validate_twn(.data)
 \item{.data}{table in TWN-format}
 }
 \value{
-a \code{data_frame} with four columns:
+a \code{tibble} with four columns:
  \itemize{
 		\item{GROUP} {TWN/WoRMS taxon group}
  	\item{LEVEL} {TWN/WoRMS taxon level}
@@ -40,13 +40,11 @@ The function adds a new column \code{taxon}. Its contents depending
 }
 \section{Functions}{
 \itemize{
-\item \code{get_worms}: get default WoRMS list (TWN list extended with species Southern North Sea)
+\item \code{get_worms()}: get default WoRMS list (TWN list extended with species Southern North Sea)
 
-\item \code{validate_twn}: validator for TWN-format
+\item \code{validate_twn()}: validator for TWN-format
+
 }}
-
 \references{
-\url{sofus.ecosys.nl/taxabase.htm}
-
-\url{www.aquo.nl/faq/faq-twn}
+\url{https://taxainfo.nl/}
 }

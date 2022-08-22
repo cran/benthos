@@ -3,18 +3,9 @@ context("Utilities")
 
 test_that("binomial names are correctly tested and split", {
 
-    expect_that(
-        is_binomen("Venerupis corrugata"), 
-        is_true()
-    )
-    expect_that(
-        is_binomen("venerupis corrugata"), 
-        is_false()
-    )
-    expect_that(
-        is_binomen("Venerupis"), 
-        is_false()
-    )
+    expect_true(is_binomen("Venerupis corrugata"))
+    expect_false(is_binomen("venerupis corrugata"))
+    expect_false(is_binomen("Venerupis"))
     expect_that(
         is_binomen(c("Venerupis corrugata", "Urothoe poseidonis")),
         is_identical_to(c(TRUE, TRUE))
@@ -27,38 +18,25 @@ test_that("binomial names are correctly tested and split", {
         is_binomen(c("Venerupis", "Urothoe")),
         is_identical_to(c(FALSE, FALSE))
     )
-    expect_that(
+    expect_true(
         is_binomen("Venerupis sp."),
-        is_true(),
         info = "genus known, species unsure"
     )
-    expect_that(
+    expect_true(
         is_binomen("Venerupis spp."),
-        is_true(),
         info = "Species pluralis, multiple species"
     )
-    expect_that(
-        is_binomen("Venerupis xxx."),
-        is_false()
-    )
-    expect_that(
-        is_binomen("Venerupis sppp."),
-        is_false()
-    )
-    expect_that(
+    expect_false(is_binomen("Venerupis xxx."))
+    expect_false(is_binomen("Venerupis sppp."))
+    expect_true(
         is_binomen("Venerupis sp"),
-        is_true(),
         info = "genus known, species unsure, period is missing"
     )
-    expect_that(
+    expect_true(
         is_binomen("Venerupis spp"),
-        is_true(),
         info = "Species pluralis, multiple species, period is missing"
     )
-    expect_that(
-        is_binomen("Venerupis sppp."),
-        is_false()
-    )
+    expect_false(is_binomen("Venerupis sppp."))
     
     expect_that(
         generic_name("Venerupis"), 

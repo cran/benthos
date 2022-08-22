@@ -2,7 +2,7 @@
 #'
 #' The number of indiviuals in each taxon.
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon name of column in \code{.data} containing taxa
 #' @param count name of column in \code{.data} containing counts
@@ -75,7 +75,7 @@ function(.data = NULL, taxon = NULL, count) {
 #'
 #' The total number of individuals.
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc. 
 #' @param count counts (\code{numeric})
 #' @param na.rm Should missing values (including \code{NaN}) 
@@ -136,7 +136,7 @@ lnn_ <- function(.data = NULL, count, na.rm = FALSE) {
 #' (lowest identification level possible) per sampling unit 
 #' (data pool or box core sample).
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon taxa names (\code{character})
 #' @param count number of individuals for each taxon (\code{numeric})
@@ -205,7 +205,7 @@ function(.data = NULL, taxon, count = NULL) {
 #'  
 #' For \eqn{N=1}, the index is set to 0.
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon taxa names (\code{character})
 #' @param count counts (\code{numeric})
@@ -254,7 +254,7 @@ function(.data = NULL, taxon, count) {
 #' for smaller \code{S=2, N=2, N=3} and \code{S=3, N=3} is
 #' \deqn{SN = \frac{\ln(S)}{\ln(\ln(N+1)+1)}}{SN = ln(S)/(ln(ln(N+1)+1))}
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon taxa names (\code{character})
 #' @param count counts (\code{numeric})
@@ -314,7 +314,7 @@ function(.data = NULL, taxon, count, adjusted = FALSE) {
 #'
 #' Compute entropy according to Shannon (1948)
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon taxa names (\code{character})
 #' @param count counts (\code{numeric})
@@ -365,7 +365,7 @@ function(.data = NULL, taxon, count, base = 2) {
 #'
 #' AZTI Marine Biotic Index (AMBI) according to Borja et al. (2000)
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon species names
 #' @param count counts of individuals (\code{numeric})
@@ -433,8 +433,8 @@ function(.data = NULL, taxon, count, group = NULL) {
         )
     }
     
-    # set up data_frame
-    d <- data_frame(TAXON = taxon, COUNT = count)
+    # set up tibble
+    d <- tibble(TAXON = taxon, COUNT = count)
     if (is.null(group)) {
         # default
         d_ambi <- .get_ambi()
@@ -471,7 +471,7 @@ function(.data = NULL, taxon, count, group = NULL) {
     d %>%
         group_by_(~GROUP) %>%
         summarise_(n = ~sum(COUNT)) %>%
-        right_join(data_frame(GROUP = permissable_groups), by = "GROUP") %>%
+        right_join(tibble(GROUP = permissable_groups), by = "GROUP") %>%
         arrange_(~GROUP) %>%
         mutate_(n = ~ifelse(is.na(n), 0, n), p = ~n / sum(n)) %>% 
         summarise_(AMBI = ~1.5 * sum(0:4 * p)) %>% 
@@ -519,7 +519,7 @@ function(.data = NULL, taxon, group = NULL) {
 #' Computes the Infaunal Trophic Index (ITI) according to 
 #' Gittenberger & van Loon (2013).
 #'  
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon species names
 #' @param count counts of individuals (\code{numeric})
@@ -589,8 +589,8 @@ function(.data = NULL, taxon, count, group = NULL) {
         )
     }
 
-    # set up data_frame
-    d <- data_frame(TAXON = taxon, COUNT = count)
+    # set up tibble
+    d <- tibble(TAXON = taxon, COUNT = count)
     if (is.null(group)) {
         # default ITI
         d_iti <- get_iti()
@@ -626,7 +626,7 @@ function(.data = NULL, taxon, count, group = NULL) {
     d %>%
         group_by_(~GROUP) %>%
         summarise_(n = ~sum(COUNT)) %>%
-        right_join(data_frame(GROUP = permissable_groups), by = "GROUP") %>%
+        right_join(tibble(GROUP = permissable_groups), by = "GROUP") %>%
         arrange_(~GROUP) %>%
         mutate_(n = ~ifelse(is.na(n), 0, n), p = ~n / sum(n)) %>% 
         summarise_(ITI = ~100 * sum(3:0 * p) / 3) %>% 
@@ -674,7 +674,7 @@ function(.data = NULL, taxon, group = NULL) {
 #'
 #'  The expected number of species in a sample of \code{n} individuals:
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon name of column in \code{.data} containing taxa
 #' @param count name of column in \code{.data} containing counts
@@ -753,7 +753,7 @@ function(.data = NULL, taxon, count, n = 100L) {
 #' Note that Hurlbert's PIE \code{hpie} is the complement of 
 #' \code{\link{simpson}}.
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon name of column in \code{.data} containing taxa
 #' @param count name of column in \code{.data} containing counts
@@ -805,7 +805,7 @@ function(.data = NULL, taxon, count) {
 #' of individuals (\code{\link{total_abundance}}). The finite sample case 
 #' has been implemented in function \code{simpson} (and \code{simpson_}).
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon name of column in \code{.data} containing taxa
 #' @param count name of column in \code{.data} containing counts
@@ -852,9 +852,9 @@ function(.data = NULL, taxon, count) {
 #'
 #' According to Hill (1973): \emph{"a diversity number is figuratively a 
 #' measure of how many species are present if we examine the sample down to a 
-#' certain depth among its rarities. If we examine superficially (\emph{e.g.},
+#' certain depth among its rarities. If we examine superficially (e.g.,
 #' by using \eqn{N_2}{N[2]}) we shall see only the more abundant species. If we 
-#' look deeply (\emph{e.g.}, by using \eqn{N_0}{N[0]}) we shall see all the 
+#' look deeply (e.g., by using \eqn{N_0}{N[0]}) we shall see all the 
 #' species present."}
 #'  
 #' Hill's diversity numbers are given by:
@@ -862,23 +862,23 @@ function(.data = NULL, taxon, count) {
 #'  
 #' Special cases are:
 #' \describe{
-#'      \item{N_-Inf}{reciprocal of the proportional abundance of the rarest 
-#'          species;}
+#'      \item{\eqn{N_{-\infty}}{N[-Inf]}}{reciprocal of the proportional
+#'          abundance of the rarest species;}
 #'      \item{\eqn{N_0}{N[0]}}{total number of species present;}
 #'      \item{\eqn{N_1}{N[1]}}{exp(H), where H: Shannon's index (see also 
 #'          \code{\link{shannon}});}
 #'      \item{\eqn{N_2}{N[2]}}{reciprocal of Simpson's index (see also 
 #'          \code{\link{simpson}});}
-#'      \item{N_Inf}{reciprocal of the proportional abundance of the commonest 
-#'          species.}
+#'      \item{\eqn{N_{\infty}}{N[Inf]}}{reciprocal of the proportional
+#'          abundance of the commonest species.}
 #' }
 #'
-#' @param .data data in a \code{data.frame}, \code{data_frame}, 
+#' @param .data data in a \code{data.frame}, \code{tibble}, 
 #'      \code{data.table}, database etc.
 #' @param taxon name of column in \code{.data} containing taxa
 #' @param count name of column in \code{.data} containing counts
 #' @param a exponent in Hill's diversity number (R, with special cases for 
-#'      \code{a } in {0, 1, 2} (see details))
+#'      \code{a} in {0, 1, 2} (see details))
 #'
 #' @return numeric vector of Hill's numbers
 #'  

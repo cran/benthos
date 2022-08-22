@@ -10,7 +10,7 @@ margalef(.data = NULL, taxon, count)
 margalef_(.data = NULL, taxon, count)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{taxa names (\code{character})}
@@ -28,10 +28,10 @@ For \eqn{N=1}, the index is set to 0.
 }
 \section{Functions}{
 \itemize{
-\item \code{margalef_}: version suitable for calling from a function
+\item \code{margalef_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \examples{
 margalef(
     taxon = c("Euspira pulchella", "Nephtys cirrosa"), 

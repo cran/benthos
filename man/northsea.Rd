@@ -4,7 +4,9 @@
 \name{northsea}
 \alias{northsea}
 \title{MWTL North Sea Bentos Data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 24983 rows and 9 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 24983 rows and 9 columns.
+}
 \usage{
 northsea
 }

@@ -30,6 +30,6 @@ This function randomly assigns samples to pools of approximately equal area
 }
 \section{Functions}{
 \itemize{
-\item \code{.pool}: internal function not supposed to be called directly.
-}}
+\item \code{.pool()}: internal function not supposed to be called directly.
 
+}}

@@ -16,7 +16,7 @@ lnn(.data = NULL, count, na.rm = FALSE)
 lnn_(.data = NULL, count, na.rm = FALSE)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{count}{counts (\code{numeric})}
@@ -32,16 +32,16 @@ The total number of individuals.
 }
 \section{Functions}{
 \itemize{
-\item \code{total_abundance_}: version suitable for calling from a function
+\item \code{total_abundance_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
 
-\item \code{lnn}: natural log of total abundance + 1
+\item \code{lnn()}: natural log of total abundance + 1
 (see package \pkg{lazyeval}).
 
-\item \code{lnn_}: version of lnn suitable for calling from a function
+\item \code{lnn_()}: version of lnn suitable for calling from a function
 (see package \pkg{lazyeval}).
+
 }}
-
 \examples{
  total_abundance(count = c(4, 6))
      

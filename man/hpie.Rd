@@ -10,7 +10,7 @@ hpie(.data = NULL, taxon, count)
 hpie_(.data = NULL, taxon, count)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{name of column in \code{.data} containing taxa}
@@ -41,10 +41,10 @@ Note that Hurlbert's PIE \code{hpie} is the complement of
 }
 \section{Functions}{
 \itemize{
-\item \code{hpie_}: suitable for calling from a function
+\item \code{hpie_()}: suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \examples{
      hpie(
          taxon = c("Euspira pulchella", "Nephtys cirrosa"), 

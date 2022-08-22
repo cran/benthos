@@ -37,9 +37,9 @@ The function performs the following tasks:
 }
 \section{Functions}{
 \itemize{
-\item \code{validate_beqi2}: validator for BEQI2-format
-}}
+\item \code{validate_beqi2()}: validator for BEQI2-format
 
+}}
 \references{
 Willem van Loon, 2013. BEQI2 INPUT FORMAT. See the package-vignette of the BENMMI-package.
 }

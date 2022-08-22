@@ -10,7 +10,7 @@ shannon(.data = NULL, taxon, count, base = 2)
 shannon_(.data = NULL, taxon, count, base = 2)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{taxa names (\code{character})}
@@ -18,7 +18,7 @@ shannon_(.data = NULL, taxon, count, base = 2)
 \item{count}{counts (\code{numeric})}
 
 \item{base}{the base with respect to which logarithms are computed. 
-Defaults to 2.}
+Defaults to 2 (unit: bits).}
 }
 \value{
 Shannon's entropy
@@ -28,10 +28,10 @@ Compute entropy according to Shannon (1948)
 }
 \section{Functions}{
 \itemize{
-\item \code{shannon_}: version suitable for calling from a function
+\item \code{shannon_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
-}}
 
+}}
 \examples{
  shannon(
      taxon = c("Euspira pulchella", "Nephtys cirrosa"), 

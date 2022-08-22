@@ -28,7 +28,7 @@ hill2(.data = NULL, taxon, count)
 hill2_(.data = NULL, taxon, count)
 }
 \arguments{
-\item{.data}{data in a \code{data.frame}, \code{data_frame}, 
+\item{.data}{data in a \code{data.frame}, \code{tibble}, 
 \code{data.table}, database etc.}
 
 \item{taxon}{name of column in \code{.data} containing taxa}
@@ -36,7 +36,7 @@ hill2_(.data = NULL, taxon, count)
 \item{count}{name of column in \code{.data} containing counts}
 
 \item{a}{exponent in Hill's diversity number (R, with special cases for 
-\code{a } in {0, 1, 2} (see details))}
+\code{a} in {0, 1, 2} (see details))}
 }
 \value{
 numeric vector of Hill's numbers
@@ -44,9 +44,9 @@ numeric vector of Hill's numbers
 \description{
 According to Hill (1973): \emph{"a diversity number is figuratively a 
 measure of how many species are present if we examine the sample down to a 
-certain depth among its rarities. If we examine superficially (\emph{e.g.},
+certain depth among its rarities. If we examine superficially (e.g.,
 by using \eqn{N_2}{N[2]}) we shall see only the more abundant species. If we 
-look deeply (\emph{e.g.}, by using \eqn{N_0}{N[0]}) we shall see all the 
+look deeply (e.g., by using \eqn{N_0}{N[0]}) we shall see all the 
 species present."}
  
 Hill's diversity numbers are given by:
@@ -54,38 +54,38 @@ Hill's diversity numbers are given by:
  
 Special cases are:
 \describe{
-     \item{N_-Inf}{reciprocal of the proportional abundance of the rarest 
-         species;}
+     \item{\eqn{N_{-\infty}}{N[-Inf]}}{reciprocal of the proportional
+         abundance of the rarest species;}
      \item{\eqn{N_0}{N[0]}}{total number of species present;}
      \item{\eqn{N_1}{N[1]}}{exp(H), where H: Shannon's index (see also 
          \code{\link{shannon}});}
      \item{\eqn{N_2}{N[2]}}{reciprocal of Simpson's index (see also 
          \code{\link{simpson}});}
-     \item{N_Inf}{reciprocal of the proportional abundance of the commonest 
-         species.}
+     \item{\eqn{N_{\infty}}{N[Inf]}}{reciprocal of the proportional
+         abundance of the commonest species.}
 }
 }
 \section{Functions}{
 \itemize{
-\item \code{hill_}: version suitable for calling from a function
+\item \code{hill_()}: version suitable for calling from a function
 (see package \pkg{lazyeval}).
 
-\item \code{hill0}: \eqn{N_0}{N[0]}
+\item \code{hill0()}: \eqn{N_0}{N[0]}
 
-\item \code{hill0_}: \eqn{N_0}{N[0]}, version suitable for calling 
+\item \code{hill0_()}: \eqn{N_0}{N[0]}, version suitable for calling 
 from a function (see package \pkg{lazyeval}).
 
-\item \code{hill1}: \eqn{N_1}{N[1]}
+\item \code{hill1()}: \eqn{N_1}{N[1]}
 
-\item \code{hill1_}: \eqn{N_1}{N[1]}, version suitable for calling 
+\item \code{hill1_()}: \eqn{N_1}{N[1]}, version suitable for calling 
 from a function (see package \pkg{lazyeval}).
 
-\item \code{hill2}: \eqn{N_2}{N[2]}
+\item \code{hill2()}: \eqn{N_2}{N[2]}
 
-\item \code{hill2_}: \eqn{N_2}{N[2]}, version suitable for calling 
+\item \code{hill2_()}: \eqn{N_2}{N[2]}, version suitable for calling 
 from a function (see package \pkg{lazyeval}).
+
 }}
-
 \examples{
      hill(
          taxon = c("Euspira pulchella", "Nephtys cirrosa"),  
