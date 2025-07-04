@@ -19,7 +19,7 @@ corresponding taxon.}
      taxon on the genus level have been set to zero.
 }
 \description{
-This alorithm reallocates the counts of taxa, that are only indentified at
+This algorithm reallocates the counts of taxa, that are only identified at
 the genus level to taxa in the same sampling unit and of the same genus 
 but that are identified on the species level. The redistribution of counts 
 is proportional to the number of counts at the species level.

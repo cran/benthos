@@ -19,12 +19,12 @@ validate_twn(.data)
 }
 \value{
 a \code{tibble} with four columns:
- \itemize{
-		\item{GROUP} {TWN/WoRMS taxon group}
- 	\item{LEVEL} {TWN/WoRMS taxon level}
- 	\item{FROM} {taxon name to convert from}
-     \item{TO} {taxon name to convert to}
-	}
+\describe{
+  \item{GROUP}{TWN/WoRMS taxon group}
+  \item{LEVEL}{TWN/WoRMS taxon level}
+  \item{FROM}{taxon name to convert from}
+  \item{TO}{taxon name to convert to}
+}
 }
 \description{
 This function reads files in the Taxa Waterbeheer Nederland (TWN) format.
@@ -32,11 +32,11 @@ This function reads files in the Taxa Waterbeheer Nederland (TWN) format.
 \details{
 The function adds a new column \code{taxon}. Its contents depending 
     on TWN-status:
-\itemize{
-		\item{status = 10} {taxonname}
- 	\item{status = 20} {prefername}
- 	\item{status = 80} {parentname}
-	}
+\describe{
+  \item{status = 10}{taxonname}
+  \item{status = 20}{prefername}
+  \item{status = 80}{parentname}
+}
 }
 \section{Functions}{
 \itemize{

@@ -2,6 +2,12 @@
 
 \title{News for Package \pkg{'benthos'}}
 
+\section{Changes in version 1.3-9 (2025-07-04)}{
+  \itemize{
+    \item corrected Rd-files to prevent NOTE at CRAN-checks
+  }
+}
+
 \section{Changes in version 1.3-8 (2022-08-22)}{
   \itemize{
     \item corrected RD-file (Hornik, 2022-08-19)

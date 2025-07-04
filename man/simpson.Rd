@@ -18,11 +18,11 @@ simpson_(.data = NULL, taxon, count)
 \item{count}{name of column in \code{.data} containing counts}
 }
 \value{
-The probability that two inidividuals selected at random from a 
+The probability that two individuals selected at random from a 
      sample will belong to the same species.
 }
 \description{
-The probability that two inidividuals selected at random (with replacement, 
+The probability that two individuals selected at random (with replacement, 
 Hurlbert, 1971, p.579) from a sample will belong to the same species. For
 an infinite sample Simpson's Index is given by (Peet, 1974):
 \deqn{\lambda = \sum_{i=1}^S p_i^2}

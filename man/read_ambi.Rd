@@ -18,19 +18,18 @@ validate_ambi(.data)
 This function reads and checks files with AMBI sensitivity data. 
 The data should be stored in 'comma separated values' format (csv) 
 consisting of two columns:
-\itemize{
-		\item{TAXON} {species name;}
- 	\item{GROUP} {Roman numeral (I, II, III, IV, V) giving the sensitivity
-     group}
+\describe{
+  \item{TAXON}{species name;}
+  \item{GROUP}{Roman numeral (I, II, III, IV, V) giving the sensitivity group}
 }
 }
 \details{
 The function performs the following tasks:
 \itemize{
-		\item{checks the existence of \code{filename};}
- 	\item{checks availablitity of required columns (case insensitive);}
- 	\item{removes redundant spaces;}
- 	\item{removes duplicated records.}
+  \item checks the existence of \code{filename};
+  \item checks availability of required columns (case insensitive);
+  \item removes redundant spaces;
+  \item removes duplicated records.
  }
 }
 \section{Functions}{

@@ -22,11 +22,11 @@ This function reads files in the taxa format.
 }
 \details{
 Taxa files have the following format:
- \itemize{
-		\item{group} {taxonomic group}
- 	\item{provided} {provided taxon name}
- 	\item{accepted} {accepted taxon name}
-     \item{level} {taxonomic level}
+ \describe{
+	  \item{group}{taxonomic group}
+   \item{provided}{provided taxon name}
+   \item{accepted}{accepted taxon name}
+   \item{level}{taxonomic level}
 	}
 	Other columns are allowed, but silently ingored.
 }

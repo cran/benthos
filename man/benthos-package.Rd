@@ -17,7 +17,7 @@ to those recommended by the World Register of Marine Species are provided.
 \details{
 All functions are designed to work seamlessly with the
 \pkg{dplyr}-package which implements a grammar for structured
-data manimpulation.
+data manipulation.
 
 The \pkg{benthos}-package contains functions for estimating various
 species abundance, species richness, species heterogeneity and species

@@ -36,7 +36,7 @@ hill2_(.data = NULL, taxon, count)
 \item{count}{name of column in \code{.data} containing counts}
 
 \item{a}{exponent in Hill's diversity number (R, with special cases for 
-\code{a} in {0, 1, 2} (see details))}
+\code{a} in \{0, 1, 2\} (see details))}
 }
 \value{
 numeric vector of Hill's numbers

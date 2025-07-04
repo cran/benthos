@@ -20,5 +20,5 @@
 #' 
 #' @source Rijkswaterstaat Water, Transport and Living Environment,
 #'      Department of Information Management, Lelystad, 
-#'      The Netherland (contact: servicedesk-data@@rws.nl)
+#'      The Netherlands (contact: servicedesk-data@@rws.nl)
 "oosterschelde"

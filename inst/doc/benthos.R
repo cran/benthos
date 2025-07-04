@@ -11,7 +11,7 @@ set.seed(314)
 ## -------------------------------------------------------------------------------------------------
 library(benthos)
 
-## ---- message=FALSE-------------------------------------------------------------------------------
+## ----message=FALSE--------------------------------------------------------------------------------
 library(dplyr)
 library(tidyr)
 library(readr)
@@ -23,8 +23,8 @@ data(oosterschelde)
 ## -------------------------------------------------------------------------------------------------
 oosterschelde
 
-## ---- eval=FALSE----------------------------------------------------------------------------------
-#  ?oosterschelde
+## ----eval=FALSE-----------------------------------------------------------------------------------
+# ?oosterschelde
 
 ## -------------------------------------------------------------------------------------------------
 oosterschelde <- oosterschelde %>%
@@ -174,7 +174,7 @@ d <- d %>%
     arrange(AREA)
 d
 
-## ---- fig.retina=NULL, fig.width=5, fig.height=3, out.width=500, echo=FALSE-----------------------
+## ----fig.retina=NULL, fig.width=5, fig.height=3, out.width=500, echo=FALSE------------------------
 ggplot(data = d) +
     geom_vline(xintercept = c(0.09, 0.11), colour = "red", size = 1, alpha = 0.5) +
     geom_linerange(
@@ -217,7 +217,7 @@ d %>% margalef(taxon = TAXON, count = COUNT)
 ## -------------------------------------------------------------------------------------------------
 d %>% rygg(taxon = TAXON, count = COUNT)
 
-## ---- echo=FALSE, message=FALSE-------------------------------------------------------------------
+## ----echo=FALSE, message=FALSE--------------------------------------------------------------------
 x <- bind_rows(
     tibble(S =  1, N = c(1:9, 1:10*10)),
     tibble(S =  2, N = c(2:9, 1:10*10)),
@@ -235,7 +235,7 @@ x <- bind_rows(
     gather(key = "index", value = "value", margalef, SN_rygg, SN_adj)
 x$value[!is.finite(x$value) | is.nan(x$value)] <- NA_real_
 
-## ---- fig.width=7, fig.height=7, out.width=500, echo=FALSE, warning=FALSE-------------------------
+## ----fig.width=7, fig.height=7, out.width=500, echo=FALSE, warning=FALSE--------------------------
 ggplot(
     data = x, 
     mapping = aes(x = N, y = value, group = S, colour = S)
@@ -252,7 +252,7 @@ d %>% rygg(taxon = TAXON, count = COUNT, adjusted = TRUE)
 ## -------------------------------------------------------------------------------------------------
 d %>% hurlbert(taxon = TAXON, count = COUNT, n = 100)
 
-## ---- echo=FALSE, fig.width=7, fig.height=4, out.width=500, echo=FALSE----------------------------
+## ----echo=FALSE, fig.width=7, fig.height=4, out.width=500, echo=FALSE-----------------------------
 n <- seq_len(d %>% total_abundance(count = COUNT))
 ESn <- sapply(X = n, FUN = function(n) {
     d %>% hurlbert(taxon = TAXON, count = COUNT, n = n)
@@ -284,7 +284,7 @@ d %>% hill0(taxon = TAXON, count = COUNT)
 d %>% hill1(taxon = TAXON, count = COUNT)
 d %>% hill2(taxon = TAXON, count = COUNT)
 
-## ---- fig.retina=NULL, fig.width=6, fig.height=4, out.width=500, echo=FALSE, warning=FALSE, message=FALSE----
+## ----fig.retina=NULL, fig.width=6, fig.height=4, out.width=500, echo=FALSE, warning=FALSE, message=FALSE----
 a <- seq(from = 0, to = 2, by = 0.1)
 N_a <- sapply(X = a, FUN = function(a) {
     d %>% hill(taxon = TAXON, count = COUNT, a = a)
@@ -383,7 +383,7 @@ d <- pool_runs %>%
     mutate(S_rm = cummean(S)) 
 d
 
-## ---- fig.retina=NULL, fig.width=7, fig.height=4, out.width=650, echo=FALSE, warning=FALSE--------
+## ----fig.retina=NULL, fig.width=7, fig.height=4, out.width=650, echo=FALSE, warning=FALSE---------
 ggplot(data = d) +
     geom_point(mapping = aes(x = POOLRUN, y = S), col = "blue") +
     geom_path(mapping = aes(x = POOLRUN, y = S_rm), col = "red") +

@@ -250,21 +250,21 @@ function(.data) {
 #'
 #' @details The function adds a new column \code{taxon}. Its contents depending 
 #'     on TWN-status:
-#' \itemize{
-#' 		\item{status = 10} {taxonname}
-#'  	\item{status = 20} {prefername}
-#'  	\item{status = 80} {parentname}
-#' 	}
+#' \describe{
+#'   \item{status = 10}{taxonname}
+#'   \item{status = 20}{prefername}
+#'   \item{status = 80}{parentname}
+#' }
 #'
 #' @param filename name of TWN file (\code{character})
 #'
 #' @return a \code{tibble} with four columns:
-#'  \itemize{
-#' 		\item{GROUP} {TWN/WoRMS taxon group}
-#'  	\item{LEVEL} {TWN/WoRMS taxon level}
-#'  	\item{FROM} {taxon name to convert from}
-#'      \item{TO} {taxon name to convert to}
-#' 	}
+#' \describe{
+#'   \item{GROUP}{TWN/WoRMS taxon group}
+#'   \item{LEVEL}{TWN/WoRMS taxon level}
+#'   \item{FROM}{taxon name to convert from}
+#'   \item{TO}{taxon name to convert to}
+#' }
 #'
 #' @references \url{https://taxainfo.nl/}
 #'  
@@ -471,11 +471,11 @@ function(.data) {
 #' @param filename name of taxa file
 #'
 #' @details Taxa files have the following format:
-#'  \itemize{
-#' 		\item{group} {taxonomic group}
-#'  	\item{provided} {provided taxon name}
-#'  	\item{accepted} {accepted taxon name}
-#'      \item{level} {taxonomic level}
+#'  \describe{
+#' 	  \item{group}{taxonomic group}
+#'    \item{provided}{provided taxon name}
+#'    \item{accepted}{accepted taxon name}
+#'    \item{level}{taxonomic level}
 #' 	}
 #' 	Other columns are allowed, but silently ingored.
 #'
@@ -641,20 +641,19 @@ function(.data) {
 #' This function reads and checks files with AMBI sensitivity data. 
 #' The data should be stored in 'comma separated values' format (csv) 
 #' consisting of two columns:
-#' \itemize{
-#' 		\item{TAXON} {species name;}
-#'  	\item{GROUP} {Roman numeral (I, II, III, IV, V) giving the sensitivity
-#'      group}
+#' \describe{
+#'   \item{TAXON}{species name;}
+#'   \item{GROUP}{Roman numeral (I, II, III, IV, V) giving the sensitivity group}
 #' }
 #'
 #' @param filename name of the AMBI sensitivity file (character)
 #'
 #' @details The function performs the following tasks:
 #' \itemize{
-#' 		\item{checks the existence of \code{filename};}
-#'  	\item{checks availablitity of required columns (case insensitive);}
-#'  	\item{removes redundant spaces;}
-#'  	\item{removes duplicated records.}
+#'   \item checks the existence of \code{filename};
+#'   \item checks availability of required columns (case insensitive);
+#'   \item removes redundant spaces;
+#'   \item removes duplicated records.
 #'  }
 #'
 #' @references Borja, A., J. Franco and V. Perez, 2000. A Marine Biotic Index 
@@ -839,20 +838,20 @@ function() {
 #'
 #' @details The function performs the following tasks:
 #' \itemize{
-#' 		\item{checks the existence of \code{filename};}
-#'  	\item{checks availablitity of required columns (case insensitive), 
-#'          i.e., TAXON and GROUP;}
-#'  	\item{removes redundant spaces;}
-#'  	\item{removes duplicated records.}
-#'      \item{checks if all ITI classes are I, II, III, or IV}
+#' 		\item checks the existence of \code{filename};
+#'  	\item checks availability of required columns (case insensitive), 
+#'          i.e., TAXON and GROUP;
+#'  	\item removes redundant spaces;
+#'  	\item removes duplicated records;
+#'      \item checks if all ITI classes are I, II, III, or IV
 #' }
 #' The column 'GROUP' contains the Roman numerals I, II, III, and IV, with
 #' the following meaning:
-#' \itemize{
-#'     	\item{  I: } {suspension feeders;}
-#'  	\item{ II: } {interface feeders;}
-#'  	\item{III: } {surface deposit feeders;}
-#'      \item{ IV: } {subsurface deposit feeders.}
+#' \describe{
+#'     	\item{  I: }{suspension feeders;}
+#'  	\item{ II: }{interface feeders;}
+#'  	\item{III: }{surface deposit feeders;}
+#'      \item{ IV: }{subsurface deposit feeders.}
 #' }
 #'  
 #' @return A data frame with columns \code{TAXON} containing taxa and 

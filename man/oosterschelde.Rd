@@ -10,7 +10,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 \source{
 Rijkswaterstaat Water, Transport and Living Environment,
      Department of Information Management, Lelystad, 
-     The Netherland (contact: servicedesk-data@rws.nl)
+     The Netherlands (contact: servicedesk-data@rws.nl)
 }
 \usage{
 oosterschelde

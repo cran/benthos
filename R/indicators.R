@@ -793,7 +793,7 @@ function(.data = NULL, taxon, count) {
 
 #' Simpson's Measure of Concentration
 #'
-#' The probability that two inidividuals selected at random (with replacement, 
+#' The probability that two individuals selected at random (with replacement, 
 #' Hurlbert, 1971, p.579) from a sample will belong to the same species. For
 #' an infinite sample Simpson's Index is given by (Peet, 1974):
 #' \deqn{\lambda = \sum_{i=1}^S p_i^2}
@@ -810,7 +810,7 @@ function(.data = NULL, taxon, count) {
 #' @param taxon name of column in \code{.data} containing taxa
 #' @param count name of column in \code{.data} containing counts
 #'
-#' @return The probability that two inidividuals selected at random from a 
+#' @return The probability that two individuals selected at random from a 
 #'      sample will belong to the same species.
 #'  
 #' @references Peet, R. K. 1974, The Measurement of Species Diversity. Annual 
@@ -878,7 +878,7 @@ function(.data = NULL, taxon, count) {
 #' @param taxon name of column in \code{.data} containing taxa
 #' @param count name of column in \code{.data} containing counts
 #' @param a exponent in Hill's diversity number (R, with special cases for 
-#'      \code{a} in {0, 1, 2} (see details))
+#'      \code{a} in \{0, 1, 2\} (see details))
 #'
 #' @return numeric vector of Hill's numbers
 #'  

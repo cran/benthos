@@ -26,20 +26,20 @@ This function reads and checks files containing Infaunal Trophic Index
 \details{
 The function performs the following tasks:
 \itemize{
-		\item{checks the existence of \code{filename};}
- 	\item{checks availablitity of required columns (case insensitive), 
-         i.e., TAXON and GROUP;}
- 	\item{removes redundant spaces;}
- 	\item{removes duplicated records.}
-     \item{checks if all ITI classes are I, II, III, or IV}
+		\item checks the existence of \code{filename};
+ 	\item checks availability of required columns (case insensitive), 
+         i.e., TAXON and GROUP;
+ 	\item removes redundant spaces;
+ 	\item removes duplicated records;
+     \item checks if all ITI classes are I, II, III, or IV
 }
 The column 'GROUP' contains the Roman numerals I, II, III, and IV, with
 the following meaning:
-\itemize{
-    	\item{  I: } {suspension feeders;}
- 	\item{ II: } {interface feeders;}
- 	\item{III: } {surface deposit feeders;}
-     \item{ IV: } {subsurface deposit feeders.}
+\describe{
+    	\item{  I: }{suspension feeders;}
+ 	\item{ II: }{interface feeders;}
+ 	\item{III: }{surface deposit feeders;}
+     \item{ IV: }{subsurface deposit feeders.}
 }
 }
 \section{Functions}{
